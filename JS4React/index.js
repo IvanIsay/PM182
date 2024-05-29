@@ -121,7 +121,7 @@ console.log(nombres.concat(edades))
 //Spread Operator
 console.log([...nombres, ...edades])
 
-*/
+
 
 // MODULOS: IMPORT & EXPORT
 
@@ -133,6 +133,53 @@ import * as calc from "./calculadora.js"
 console.log(calc.suma(45,54))
 console.log(calc.resta(45,5))
 
+
+//Ejemplo de Promesa
+
+const ul= document.createElement('ul')
+
+fetch('https://jsonplaceholder.typicode.com/posts')
+            .then(function (response){
+                console.log("Carga de datos completada")
+                return response.json()
+            }).then(function (data){
+                console.log(data)
+                data.forEach( function (post){
+                    const li = document.createElement('li')
+                    li.innerHTML= post.title
+                    ul.append(li)
+                })
+            document.body.append(ul)
+            })
+
+console.log('Cargando HTML')
+console.log('Cargando CSS')
+console.log('Cargando Imagenes')
+
+*/
+
+
+//Ejemplo con Async Await
+
+const ul= document.createElement('ul')
+
+async function cargarDatos(){
+  const response= await fetch('https://jsonplaceholder.typicode.com/posts')
+  console.log('datos cargados')
+  const datos = await response.json()
+  console.log(datos)
+  datos.forEach( function (post){
+    const li = document.createElement('li')
+    li.innerHTML= post.title
+    ul.append(li)
+})
+document.body.append(ul)
+}
+
+cargarDatos()
+console.log('Cargando HTML')
+console.log('Cargando CSS')
+console.log('Cargando Imagenes')
 
 
 
