@@ -1,14 +1,18 @@
 import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View,Button } from 'react-native';
+import React,{useState} from 'react';
 
+const Texto=()=>{
+  const [contenido,setContenido]= useState('holaMundo')
+  const actualizarContenido=()=>{setContenido('State actualizo este texto')}
+  return( <Text onPress={actualizarContenido}> {contenido}</Text>)
+}
 
 export default function App() {
   return (
-
     <View style={styles.container}>
-
-
-      <Text>   Hola mundo!  </Text>
+      <Texto > </Texto>
+      <Texto />    
       <Button title='Presioname' color="#000000"></Button>
 
       
