@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { SafeAreaView, View, Text, TextInput, Button, StyleSheet, Alert } from 'react-native';
+import { SafeAreaView, View, Text, TextInput, Button, StyleSheet, Alert, ImageBackground } from 'react-native';
 
 const App = () => {
   const [name, setName] = useState('');
@@ -12,34 +12,40 @@ const App = () => {
 
   return (
     <SafeAreaView style={styles.container}>
-      <View style={styles.formContainer}>
-        <Text style={styles.label}>Nombre:</Text>
-        <TextInput
-          style={styles.input}
-          placeholder="Ingresa tu nombre"
-          value={name}
-          onChangeText={setName}
-          placeholderTextColor="#aaa" // Color del placeholder
-        />
-        <Text style={styles.label}>Email:</Text>
-        <TextInput
-          style={styles.input}
-          placeholder="Ingresa tu email"
-          value={email}
-          onChangeText={setEmail}
-          placeholderTextColor="#aaa" // Color del placeholder
-        />
-        <Text style={styles.label}>Password:</Text>
-        <TextInput
-          style={styles.input}
-          placeholder="Ingresa tu password"
-          secureTextEntry
-          value={password}
-          onChangeText={setPassword}
-          placeholderTextColor="#aaa" // Color del placeholder
-        />
-        <Button title="Guardar"  color='#FF0709' onPress={handleSubmit} />
-      </View>
+      
+      
+      <ImageBackground source={{ uri: 'https://blog.atolcd.com/wp-content/uploads/2022/04/vignette_React-1.jpg' }} style={styles.backgroundImage}>
+       
+       
+        <View style={styles.formContainer}>
+          <Text style={styles.label}>Nombre:</Text>
+          <TextInput
+            style={styles.input}
+            placeholder="Ingresa tu nombre"
+            value={name}
+            onChangeText={setName}
+            placeholderTextColor="#aaa" // Color del placeholder
+          />
+          <Text style={styles.label}>Email:</Text>
+          <TextInput
+            style={styles.input}
+            placeholder="Ingresa tu email"
+            value={email}
+            onChangeText={setEmail}
+            placeholderTextColor="#aaa" // Color del placeholder
+          />
+          <Text style={styles.label}>Password:</Text>
+          <TextInput
+            style={styles.input}
+            placeholder="Ingresa tu password"
+            secureTextEntry
+            value={password}
+            onChangeText={setPassword}
+            placeholderTextColor="#aaa" // Color del placeholder
+          />
+          <Button title="Guardar" color='#FF0709' onPress={handleSubmit} />
+        </View>
+      </ImageBackground>
     </SafeAreaView>
   );
 };
@@ -47,10 +53,12 @@ const App = () => {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
+  },
+  backgroundImage: {
+    flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
     padding: 16,
-    backgroundColor: '#AFACAC', // Color de fondo del contenedor principal
   },
   formContainer: {
     width: '100%',

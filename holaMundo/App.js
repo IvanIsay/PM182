@@ -1,21 +1,89 @@
 import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View,Button } from 'react-native';
+import { StyleSheet, Text, View,Button ,TextInput,ScrollView, Dimensions} from 'react-native';
 import React,{useState} from 'react';
 
-const Texto=({estilo})=>{
-  const [contenido,setContenido]= useState('holaMundo')
-  const actualizarContenido=()=>{setContenido('State actualizo este texto')}
-  return( <Text style={[styles.text,estilo]} onPress={actualizarContenido}> {contenido}</Text>)
-}
+
 
 export default function App() {
+
+  const[text,setText]= useState('valor Default')
+  const[submit,setSubmit]= useState('')
+
   return (
+
+
     <View style={styles.container}>
+
+      <ScrollView style={styles.scrollView}>
+
+      <Text> Componente: {submit}   </Text>
+      <Text> Componente: {submit}   </Text>
+      <Text> Componente: {submit}   </Text>
+      <Text> Componente: {submit}   </Text>
+      <Text> Componente: {submit}   </Text>
+      <Text> Componente: {submit}   </Text>
+      <Text> Componente: {submit}   </Text>
+      <Text> Componente: {submit}   </Text>
+      <Text> Componente: {submit}   </Text>
+      <Text> Componente: {submit}   </Text>
+      <Text> Componente: {submit}   </Text>
+      <Text> Componente: {submit}   </Text>
+      <Text> Componente: {submit}   </Text>
+      <Text> Componente: {submit}   </Text>
+      <Text> Componente: {submit}   </Text>
+      <Text> Componente: {submit}   </Text>
+      <Text> Componente: {submit}   </Text>
+      <Text> Componente: {submit}   </Text>
+      <Text> Componente: {submit}   </Text>
+
+      <Text> Componente: {submit}   </Text>
+      <Text> Componente: {submit}   </Text>
+
+      <Text> Componente: {submit}   </Text>
+      <Text> Componente: {submit}   </Text>
+      <Text> Componente: {submit}   </Text>
+      <Text> Componente: {submit}   </Text>
+      <Text> Componente: {submit}   </Text>
+      <Text> Componente: {submit}   </Text>
+      <Text> Componente: {submit}   </Text>
+      <Text> Componente: {submit}   </Text>
+      <Text> Componente: {submit}   </Text>
+      <Text> Componente: {submit}   </Text>
+      <Text> Componente: {submit}   </Text>
+      <Text> Componente: {submit}   </Text>
+      <Text> Componente: {submit}   </Text>
+      <Text> Componente: {submit}   </Text>
+      <Text> Componente: {submit}   </Text>
+      <Text> Componente: {submit}   </Text>
+      <Text> Componente: {submit}   </Text>
+      <Text> Componente: {submit}   </Text>
+      <Text> Componente: {submit}   </Text>
+      <Text> Componente: {submit}   </Text>
+      <Text> Componente: {submit}   </Text>
+      <Text> Componente: {submit}   </Text>
+      <Text> Componente: {submit}   </Text>
+      <Text> Componente: {submit}   </Text>
+      <Text> Componente: {submit}   </Text>
+      <Text> Componente: {submit}   </Text>
+      <Text> Componente: {submit}   </Text>
+      <Text> Componente: {submit}   </Text>
+      <Text> Componente: {submit}   </Text>
+      <Text> Componente: {submit}   </Text>
+      <Text> Componente: {submit}   </Text>
+      <Text> Componente: {submit}   </Text>
+      <Text> Componente: {submit}   </Text>
+      <Text> Componente: {submit}   </Text>
+      <Text> Componente: {submit}   </Text>
+      <Text> Componente: {submit}   </Text>
+
+
+      <TextInput style= {styles.input} placeholder='Escribe texto...'  onChangeText= { t=>setText(t) } defaultValue={text}   / >
       
-      <Texto estilo={styles.red} />
-      <Texto estilo={styles.green} />    
-      <Texto estilo={styles.blue} />        
-      
+      <Button title='Presioname...'  onPress={ ()=>{ setSubmit(text);  alert('Texto enviado')} }/>
+
+      </ScrollView>
+
+
       <StatusBar style="auto" />
     </View>
 
@@ -29,28 +97,17 @@ const styles = StyleSheet.create({
     flexDirection:'column',
     backgroundColor: '#fff',
     alignItems: 'center',
-    justifyContent: 'space-evenly',
+    justifyContent: 'center',
   },
-  text:{
-    color:'yellow',
-    fontSize:25,
-    height:150,
-
+  input:{
+    /* backgroundColor:'#dfd7fd', */
+    width:'80%',
+    height:40,
+    borderBottomWidth: 1,
+    borderBottomColor:'blue',
   },
-red:{
-  /* flex:1, */
-  backgroundColor:'red',
-},
-green:{
-  /* flex:2, */
-  backgroundColor:'green',
-},
-blue:{
-  /* flex:3, */
-  backgroundColor:'blue',
-}
-
-
-
+  scrollView:{
+    width:Dimensions.get('window').width
+  }
 
 });
