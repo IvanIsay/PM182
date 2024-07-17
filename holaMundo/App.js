@@ -1,40 +1,18 @@
 import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View,FlatList,ActivityIndicator} from 'react-native';
 import React,{useState,useEffect} from 'react';
+import Prueba from './screens/Prueba.js';
+
 
 export default function App() {
 
-  const [user,setUser]= useState([])
-  const [loading,setLoading]= useState(true)
-
-  useEffect(()=>{
-      fetch('https://jsonplaceholder.typicode.com/users')
-        .then(response=> response.json())
-        .then(data=>{setUser(data), setLoading(false)})
-  },[])
-
-
-  if(loading){
-    return <View style={styles.center}>
-         <ActivityIndicator size='large' color='#0000ff' /> 
-          <Text> Cargando </Text>
-    </View>
-  }
-
-
   return (
 
-    <View style={styles.container}>
-
-      <FlatList
-      data={user}
-      renderItem={({item})=> <Text style={styles.item}> {item.username}  {item.address.city}  </Text> }
-      />
-
-      <StatusBar style="auto" />
-    </View>
+    <Prueba></Prueba>
+    
 
   );
+  
 }
 
 const styles = StyleSheet.create({

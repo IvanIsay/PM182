@@ -87,8 +87,8 @@ const styles = StyleSheet.create({
     borderBottomColor: '#ccc',
   },
   titulo: {
-    marginTop: 10,
-    marginBottom: 5,
+    marginTop: 40,
+    marginBottom: 20,
     fontSize: 25,
     //color: 'red',
     fontWeight: 'bold',
